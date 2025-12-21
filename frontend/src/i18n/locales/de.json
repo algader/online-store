@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "cart": "Warenkorb",
+    "orders": "Meine Bestellungen",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "admin": "Admin-Panel",
+    "logout": "Abmelden"
+  },
+  "home": {
+    "title": "Unser Online-Shop",
+    "allCategories": "Alle",
+    "electronics": "Elektronik",
+    "cameras": "Kameras",
+    "accessories": "Zubehör",
+    "games": "Spiele",
+    "loading": "Laden...",
+    "filterByCategory": "Nach Kategorie filtern",
+    "showing": "Zeige",
+    "of": "von",
+    "products": "Produkten",
+    "noProducts": "Keine Produkte in dieser Kategorie",
+    "tryAnother": "Probieren Sie eine andere Kategorie"
+  },
+  "product": {
+    "price": "SAR",
+    "available": "Verfügbar",
+    "outOfStock": "Nicht vorrätig",
+    "addToCart": "In den Warenkorb",
+    "unavailable": "Nicht verfügbar",
+    "description": "Beschreibung",
+    "category": "Kategorie",
+    "stock": "Lagerbestand",
+    "quantity": "Menge",
+    "loginRequired": "Bitte melden Sie sich zuerst an",
+    "addedSuccess": "✅ Produkt erfolgreich zum Warenkorb hinzugefügt"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Warenkorb ist leer",
+    "emptyMessage": "Keine Produkte im Warenkorb",
+    "items": "Artikel",
+    "subtotal": "Zwischensumme",
+    "shipping": "Versand",
+    "freeShipping": "Kostenlos",
+    "total": "Gesamt",
+    "checkout": "Zur Kasse",
+    "shippingInfo": "Versandinformationen",
+    "address": "Adresse",
+    "phone": "Telefonnummer",
+    "orderSuccess": "Bestellung erfolgreich aufgegeben!"
+  },
+  "auth": {
+    "loginTitle": "Anmelden",
+    "registerTitle": "Neues Konto erstellen",
+    "name": "Name",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "address": "Adresse",
+    "phone": "Telefon",
+    "loginButton": "Anmelden",
+    "registerButton": "Registrieren",
+    "haveAccount": "Haben Sie ein Konto?",
+    "noAccount": "Haben Sie kein Konto?",
+    "loginHere": "Hier anmelden",
+    "registerHere": "Hier registrieren"
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "products": "Produkte",
+    "users": "Benutzer",
+    "orders": "Bestellungen",
+    "addProduct": "Produkt hinzufügen",
+    "editProduct": "Produkt bearbeiten",
+    "deleteProduct": "Löschen",
+    "save": "Speichern",
+    "cancel": "Abbrechen"
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "returns": "Rückgaberecht",
+    "aboutUs": "Wichtige Informationen über unser Geschäft",
+    "quickLinks": "Schnelllinks",
+    "categories": "Kategorien",
+    "contactUs": "Kontakt",
+    "followUs": "Folgen Sie uns"
+  }
+}

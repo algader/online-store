@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "cart": "عربة التسوق",
+    "orders": "طلباتي",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "admin": "لوحة التحكم",
+    "logout": "تسجيل الخروج"
+  },
+  "home": {
+    "title": "متجرنا الإلكتروني",
+    "allCategories": "الكل",
+    "electronics": "إلكترونيات",
+    "cameras": "كاميرات",
+    "accessories": "إكسسوارات",
+    "games": "ألعاب",
+    "loading": "جاري التحميل...",
+    "filterByCategory": "تصفية حسب الفئة",
+    "showing": "عرض",
+    "of": "من",
+    "products": "منتج",
+    "noProducts": "لا توجد منتجات في هذه الفئة",
+    "tryAnother": "جرب فئة أخرى"
+  },
+  "product": {
+    "price": "ريال",
+    "available": "متوفر",
+    "outOfStock": "نفذت الكمية",
+    "addToCart": "إضافة إلى السلة",
+    "unavailable": "غير متوفر",
+    "description": "الوصف",
+    "category": "الفئة",
+    "stock": "المخزون",
+    "quantity": "الكمية",
+    "loginRequired": "يرجى تسجيل الدخول أولاً",
+    "addedSuccess": "✅ تمت إضافة المنتج إلى السلة بنجاح"
+  },
+  "cart": {
+    "title": "عربة التسوق",
+    "empty": "عربة التسوق فارغة",
+    "emptyMessage": "لا توجد منتجات في عربة التسوق",
+    "items": "المنتجات",
+    "subtotal": "المجموع الفرعي",
+    "shipping": "الشحن",
+    "freeShipping": "مجاني",
+    "total": "الإجمالي",
+    "checkout": "إتمام الطلب",
+    "shippingInfo": "معلومات الشحن",
+    "address": "العنوان",
+    "phone": "رقم الهاتف",
+    "orderSuccess": "تم إنشاء الطلب بنجاح!"
+  },
+  "auth": {
+    "loginTitle": "تسجيل الدخول",
+    "registerTitle": "إنشاء حساب جديد",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "address": "العنوان",
+    "phone": "رقم الهاتف",
+    "loginButton": "تسجيل الدخول",
+    "registerButton": "إنشاء حساب",
+    "haveAccount": "لديك حساب؟",
+    "noAccount": "ليس لديك حساب؟",
+    "loginHere": "سجل الدخول هنا",
+    "registerHere": "أنشئ حساباً هنا"
+  },
+  "admin": {
+    "dashboard": "لوحة التحكم",
+    "products": "المنتجات",
+    "users": "المستخدمون",
+    "orders": "الطلبات",
+    "addProduct": "إضافة منتج",
+    "editProduct": "تعديل منتج",
+    "deleteProduct": "حذف",
+    "save": "حفظ",
+    "cancel": "إلغاء"
+  },
+  "footer": {
+    "rights": "جميع الحقوق محفوظة",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الاستخدام",
+    "returns": "سياسة الإرجاع",
+    "aboutUs": "معلومات هامة عن متجرنا",
+    "quickLinks": "روابط سريعة",
+    "categories": "الفئات",
+    "contactUs": "تواصل معنا",
+    "followUs": "تابعنا"
+  }
+}

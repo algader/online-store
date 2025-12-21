@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home": "Home",
+    "cart": "Shopping Cart",
+    "orders": "My Orders",
+    "login": "Login",
+    "register": "Register",
+    "admin": "Admin Panel",
+    "logout": "Logout"
+  },
+  "home": {
+    "title": "Our Online Store",
+    "allCategories": "All",
+    "electronics": "Electronics",
+    "cameras": "Cameras",
+    "accessories": "Accessories",
+    "games": "Games",
+    "loading": "Loading...",
+    "filterByCategory": "Filter by Category",
+    "showing": "Showing",
+    "of": "of",
+    "products": "products",
+    "noProducts": "No products in this category",
+    "tryAnother": "Try another category"
+  },
+  "product": {
+    "price": "SAR",
+    "available": "Available",
+    "outOfStock": "Out of Stock",
+    "addToCart": "Add to Cart",
+    "unavailable": "Unavailable",
+    "description": "Description",
+    "category": "Category",
+    "stock": "Stock",
+    "quantity": "Quantity",
+    "loginRequired": "Please login first",
+    "addedSuccess": "✅ Product added to cart successfully"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Cart is Empty",
+    "emptyMessage": "No products in cart",
+    "items": "Items",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "freeShipping": "Free",
+    "total": "Total",
+    "checkout": "Checkout",
+    "shippingInfo": "Shipping Information",
+    "address": "Address",
+    "phone": "Phone Number",
+    "orderSuccess": "Order placed successfully!"
+  },
+  "auth": {
+    "loginTitle": "Login",
+    "registerTitle": "Create New Account",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "address": "Address",
+    "phone": "Phone",
+    "loginButton": "Login",
+    "registerButton": "Register",
+    "haveAccount": "Have an account?",
+    "noAccount": "Don't have an account?",
+    "loginHere": "Login here",
+    "registerHere": "Register here"
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "users": "Users",
+    "orders": "Orders",
+    "addProduct": "Add Product",
+    "editProduct": "Edit Product",
+    "deleteProduct": "Delete",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "footer": {
+    "rights": "All Rights Reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "returns": "Return Policy",
+    "aboutUs": "Important Information About Our Store",
+    "quickLinks": "Quick Links",
+    "categories": "Categories",
+    "contactUs": "Contact Us",
+    "followUs": "Follow Us"
+  }
+}
