@@ -8,7 +8,13 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://online-store-frontend.onrender.com',
+    'http://localhost:3000'  // Für lokale Entwicklung
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // MongoDB Connection
