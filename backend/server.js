@@ -10,7 +10,7 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: [
-    'https://online-store-frontend.onrender.com',
+    'https://online-store-1-rfrp.onrender.com',
     'http://localhost:3000'  // Für lokale Entwicklung
   ],
   credentials: true
