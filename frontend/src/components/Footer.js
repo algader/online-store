@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,10 +18,10 @@ const Footer = () => {
         <div className="footer-section">
           <h4 className="footer-subtitle">روابط سريعة</h4>
           <ul className="footer-links">
-            <li><a href="/">الرئيسية</a></li>
-            <li><a href="/cart">عربة التسوق</a></li>
-            <li><a href="/orders">طلباتي</a></li>
-            <li><a href="/login">تسجيل الدخول</a></li>
+            <li><Link to="/">الرئيسية</Link></li>
+            <li><Link to="/cart">عربة التسوق</Link></li>
+            <li><Link to="/orders">طلباتي</Link></li>
+            <li><Link to="/login">تسجيل الدخول</Link></li>
           </ul>
         </div>
 
@@ -76,11 +77,11 @@ const Footer = () => {
           © {currentYear} متجرنا الإلكتروني. جميع الحقوق محفوظة.
         </p>
         <div className="footer-bottom-links">
-          <a href="/privacy">سياسة الخصوصية</a>
+          <Link to="/privacy">سياسة الخصوصية</Link>
           <span className="separator">|</span>
-          <a href="/terms">شروط الاستخدام</a>
+          <Link to="/terms">شروط الاستخدام</Link>
           <span className="separator">|</span>
-          <a href="/returns">سياسة الإرجاع</a>
+          <Link to="/returns">سياسة الإرجاع</Link>
         </div>
       </div>
     </footer>
