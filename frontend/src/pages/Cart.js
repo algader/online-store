@@ -203,8 +203,7 @@ const Cart = () => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 required
-                placeholder="05xxxxxxxx"
-                pattern="[0-9]{10}"
+                placeholder="0501234567 oder +49123456789"
               />
             </div>
             
