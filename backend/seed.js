@@ -1,6 +1,3 @@
-// سكريبت لإضافة بيانات تجريبية
-// استخدم هذا الملف لإضافة منتجات ومستخدمين تجريبيين
-
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 require('dotenv').config();
@@ -95,7 +92,7 @@ const products = [
 // دالة لإضافة البيانات
 const seedDatabase = async () => {
   try {
-    // حذف البيانات القديمة
+  
     await User.deleteMany({});
     await Product.deleteMany({});
     console.log('🗑️  تم حذف البيانات القديمة');
@@ -130,6 +127,6 @@ const seedDatabase = async () => {
   }
 };
 
-// تنفيذ السكريبت
+
 seedDatabase();
 

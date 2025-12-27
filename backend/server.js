@@ -11,7 +11,7 @@ const app = express();
 app.use(cors({
   origin: [
     'https://online-store-1-rfrp.onrender.com',
-    'http://localhost:3000'  // Für lokale Entwicklung
+    'http://localhost:3000'  
   ],
   credentials: true
 }));
