@@ -82,6 +82,26 @@ body {
   background-color: #c0392b;
 }
 
+/* Hamburger Menu (hidden on desktop) */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.hamburger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
 /* Mobile Navbar Styles */
 @media (max-width: 768px) {
   .navbar {
@@ -89,28 +109,77 @@ body {
   }
 
   .navbar-content {
-    flex-direction: column;
-    gap: 15px;
-    padding: 0 10px;
+    position: relative;
+    padding: 0 15px;
   }
 
   .navbar h1 {
     font-size: 1.2rem;
-    text-align: center;
-    width: 100%;
   }
 
+  /* Show Hamburger Menu on Mobile */
+  .hamburger-menu {
+    display: flex;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Hide nav by default on mobile */
   .navbar nav {
-    width: 100%;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #2c3e50;
+    flex-direction: column;
+    gap: 0;
+    padding: 80px 20px 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+  }
+
+  /* Show nav when open */
+  .navbar nav.nav-open {
+    right: 0;
   }
 
   .navbar a,
   .navbar button {
-    font-size: 0.85rem;
-    padding: 6px 12px;
+    width: 100%;
+    text-align: right;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  .navbar a:hover,
+  .navbar button:hover {
+    background-color: #34495e;
+  }
+
+  /* RTL Support for Arabic */
+  [dir="rtl"] .navbar nav {
+    right: auto;
+    left: -100%;
+  }
+
+  [dir="rtl"] .navbar nav.nav-open {
+    left: 0;
+    right: auto;
+  }
+
+  [dir="rtl"] .hamburger-menu {
+    right: auto;
+    left: 15px;
+  }
+
+  [dir="rtl"] .navbar a,
+  [dir="rtl"] .navbar button {
+    text-align: left;
   }
 }
 
@@ -120,13 +189,7 @@ body {
   }
 
   .navbar nav {
-    gap: 6px;
-  }
-
-  .navbar a,
-  .navbar button {
-    font-size: 0.75rem;
-    padding: 5px 10px;
+    width: 220px;
   }
 }
 
