@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # قاعدة بيانات MongoDB
+  mongodb:
+    image: mongo:latest
+    container_name: onlinestore-mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=onlinestore
+    networks:
+      - onlinestore-network
+
+  # Backend API
+  backend:
+    build: ./backend
+    container_name: onlinestore-backend
+    restart: always
+    ports:
+      - "5001:5000"
+    depends_on:
+      - mongodb
+    environment:
+      - NODE_ENV=development
+      - MONGODB_URI=mongodb://mongodb:27017/onlinestore
+      - JWT_SECRET=your-secret-key-change-in-production
+      - PORT=5000
+    networks:
+      - onlinestore-network
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  # Frontend React App
+  frontend:
+    build: ./frontend
+    container_name: onlinestore-frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_API_URL=http://localhost:5001/api
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - onlinestore-network
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+
+volumes:
+  mongo-data:
+
+networks:
+  onlinestore-network:
+    driver: bridge
