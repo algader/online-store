@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
 // إنشاء منتج جديد (مشرف فقط)
 router.post('/', auth, adminAuth, async (req, res) => {
   try {
-    const { name, description, price, category, image, stock } = req.body;
+    const { name, description, price, category, image, stock, countInStock } = req.body;
 
     const product = new Product({
       name,
@@ -39,7 +39,8 @@ router.post('/', auth, adminAuth, async (req, res) => {
       price,
       category,
       image,
-      stock
+      stock,
+      countInStock: countInStock || stock || 0  // إذا لم يُحدد، استخدم stock
     });
 
     await product.save();
@@ -53,11 +54,24 @@ router.post('/', auth, adminAuth, async (req, res) => {
 // تحديث منتج (مشرف فقط)
 router.put('/:id', auth, adminAuth, async (req, res) => {
   try {
-    const { name, description, price, category, image, stock } = req.body;
+    const { name, description, price, category, image, stock, countInStock } = req.body;
+
+    const updateData = { name, description, price, category, image };
+
+    if (typeof stock === 'number') {
+      updateData.stock = stock;
+    }
+
+    if (typeof countInStock === 'number') {
+      updateData.countInStock = countInStock;
+    } else if (typeof stock === 'number') {
+      // إذا لم يُحدد countInStock، استخدم stock كقيمة افتراضية
+      updateData.countInStock = stock;
+    }
 
     const product = await Product.findByIdAndUpdate(
       req.params.id,
-      { name, description, price, category, image, stock },
+      updateData,
       { new: true, runValidators: true }
     );
 

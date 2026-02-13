@@ -29,19 +29,20 @@ const ProductDetails = () => {
   }, [id]);
 
   const handleAddToCart = () => {
+    const availableStock = product?.countInStock ?? product?.stock ?? 0;
     if (!user) {
       alert('⚠️ يرجى تسجيل الدخول أولاً');
       navigate('/login');
       return;
     }
     
-    if (product.stock === 0) {
+    if (availableStock === 0) {
       alert('❌ المنتج غير متوفر حالياً');
       return;
     }
 
-    if (quantity > product.stock) {
-      alert(`⚠️ الكمية المتوفرة فقط ${product.stock}`);
+    if (quantity > availableStock) {
+      alert(`⚠️ الكمية المتوفرة فقط ${availableStock}`);
       return;
     }
 
@@ -54,10 +55,11 @@ const ProductDetails = () => {
   };
 
   const increaseQuantity = () => {
-    if (quantity < product.stock) {
+    const availableStock = product?.countInStock ?? product?.stock ?? 0;
+    if (quantity < availableStock) {
       setQuantity(quantity + 1);
     } else {
-      alert(`⚠️ الحد الأقصى المتوفر ${product.stock}`);
+      alert(`⚠️ الحد الأقصى المتوفر ${availableStock}`);
     }
   };
 
@@ -111,7 +113,7 @@ const ProductDetails = () => {
           </div>
           
           {/* شارة نفاد المخزون */}
-          {product.stock === 0 && (
+          {(product.countInStock ?? product.stock ?? 0) === 0 && (
             <div className="product-out-of-stock-badge">
               نفذت الكمية
             </div>
@@ -126,9 +128,9 @@ const ProductDetails = () => {
           </div>
 
           <div className="product-stock-info">
-            {product.stock > 0 ? (
+            {(product.countInStock ?? product.stock ?? 0) > 0 ? (
               <span className="in-stock">
-                ✅ متوفر في المخزون ({product.stock} قطعة)
+                ✅ متوفر في المخزون ({product.countInStock ?? product.stock ?? 0} قطعة)
               </span>
             ) : (
               <span className="out-of-stock">
@@ -147,7 +149,7 @@ const ProductDetails = () => {
             <p>{product.category}</p>
           </div>
 
-          {product.stock > 0 && (
+          {(product.countInStock ?? product.stock ?? 0) > 0 && (
             <div className="quantity-selector">
               <label>الكمية:</label>
               <div className="quantity-controls">
@@ -160,7 +162,7 @@ const ProductDetails = () => {
                 <span className="quantity-display">{quantity}</span>
                 <button 
                   onClick={increaseQuantity}
-                  disabled={quantity >= product.stock}
+                  disabled={quantity >= (product.countInStock ?? product.stock ?? 0)}
                 >
                   +
                 </button>
@@ -172,9 +174,9 @@ const ProductDetails = () => {
             <button 
               className="btn btn-add-to-cart"
               onClick={handleAddToCart}
-              disabled={product.stock === 0}
+              disabled={(product.countInStock ?? product.stock ?? 0) === 0}
             >
-              {product.stock === 0 ? '❌ غير متوفر' : '🛒 إضافة إلى السلة'}
+              {(product.countInStock ?? product.stock ?? 0) === 0 ? '❌ غير متوفر' : '🛒 إضافة إلى السلة'}
             </button>
           </div>
         </div>

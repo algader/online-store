@@ -37,7 +37,8 @@ const products = [
     price: 4500,
     category: 'إلكترونيات',
     image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=300',
-    stock: 10
+    stock: 10,
+    countInStock: 10
   },
   {
     name: 'سماعات Sony WH-1000XM5',
@@ -45,7 +46,8 @@ const products = [
     price: 1200,
     category: 'إلكترونيات',
     image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=300',
-    stock: 20
+    stock: 20,
+    countInStock: 20
   },
   {
     name: 'ساعة Apple Watch Series 9',
@@ -53,7 +55,8 @@ const products = [
     price: 1800,
     category: 'إكسسوارات',
     image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=300',
-    stock: 12
+    stock: 12,
+    countInStock: 12
   },
   {
     name: 'iPad Air M2',
@@ -61,7 +64,8 @@ const products = [
     price: 2800,
     category: 'إلكترونيات',
     image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300',
-    stock: 8
+    stock: 8,
+    countInStock: 8
   },
   {
     name: 'كاميرا Canon EOS R6',
@@ -69,7 +73,8 @@ const products = [
     price: 9500,
     category: 'كاميرات',
     image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300',
-    stock: 5
+    stock: 5,
+    countInStock: 5
   },
   {
     name: 'PlayStation 5',
@@ -77,7 +82,8 @@ const products = [
     price: 2100,
     category: 'ألعاب',
     image: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=300',
-    stock: 7
+    stock: 7,
+    countInStock: 7
   },
   {
     name: 'شاشة Samsung 4K',
@@ -85,7 +91,8 @@ const products = [
     price: 3200,
     category: 'إلكترونيات',
     image: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=300',
-    stock: 6
+    stock: 6,
+    countInStock: 6
   }
 ];
 

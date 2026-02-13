@@ -26,13 +26,15 @@ const Cart = () => {
     setLoading(true);
 
     try {
+      // 🔒 الأمان: نرسل فقط productId والكمية
+      // السعر سيتم حسابه على الخادم من قاعدة البيانات
       const orderData = {
         items: cart.map(item => ({
-          product: item._id,
-          quantity: item.quantity,
-          price: item.price
+          productId: item._id, // فقط ID المنتج
+          quantity: item.quantity  // وكمية المنتج
+          // لا نرسل price - سيتم جلبها من الخادم بأمان
         })),
-        totalAmount: getTotalPrice(),
+        // لا نرسل totalAmount - سيتم حسابه على الخادم
         shippingAddress,
         phone
       };
@@ -43,7 +45,7 @@ const Cart = () => {
       navigate('/orders');
     } catch (error) {
       console.error('Error creating order:', error);
-      alert('❌ حدث خطأ أثناء إنشاء الطلب');
+      alert('❌ حدث خطأ أثناء إنشاء الطلب: ' + (error.response?.data?.message || error.message));
     } finally {
       setLoading(false);
     }

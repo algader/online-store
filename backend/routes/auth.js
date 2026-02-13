@@ -17,7 +17,7 @@ router.post('/register', [
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, email, password, role } = req.body;
+    const { name, email, password } = req.body;
 
     // التحقق من وجود المستخدم
     let user = await User.findOne({ email });
@@ -29,13 +29,13 @@ router.post('/register', [
     const salt = await bcrypt.genSalt(8);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    // إنشاء مستخدم جديد
-      
+    // إنشاء مستخدم جديد - الرتبة الافتراضية دائماً 'user'
+    // تعيين المدير يتم يدوياً في قاعدة البيانات فقط
     user = new User({
       name,
       email,
       password: hashedPassword,
-      role: role === 'admin' ? 'admin' : 'user'    
+      role: 'user' // دائماً user - لا يمكن للمستخدم تعيين نفسه كمدير
     });
 
     await user.save();
