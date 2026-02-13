@@ -26,15 +26,11 @@ const Cart = () => {
     setLoading(true);
 
     try {
-      // 🔒 الأمان: نرسل فقط productId والكمية
-      // السعر سيتم حسابه على الخادم من قاعدة البيانات
       const orderData = {
         items: cart.map(item => ({
-          productId: item._id, // فقط ID المنتج
-          quantity: item.quantity  // وكمية المنتج
-          // لا نرسل price - سيتم جلبها من الخادم بأمان
+          productId: item._id,
+          quantity: item.quantity
         })),
-        // لا نرسل totalAmount - سيتم حسابه على الخادم
         shippingAddress,
         phone
       };

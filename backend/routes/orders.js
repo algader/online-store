@@ -4,15 +4,8 @@ const Order = require('../models/Order');
 const Product = require('../models/Product');
 const { auth, adminAuth } = require('../middleware/auth');
 
-// إنشاء طلب جديد
-// ⚠️ الأمان:
-// 1. السعر يُحسب على الخادم فقط، لا نثق بالسعر من الفرونت-إند
-// 2. التحقق من المخزون قبل الطلب
-// 3. خصم المخزون عند نجاح الطلب
 router.post('/', auth, async (req, res) => {
   try {
-    // نقبل فقط: items (مع product ID والكمية)، العنوان، والهاتف
-    // لا نقبل: totalAmount أو price (سيتم حسابها بأمان على الخادم)
     const { items, shippingAddress, phone } = req.body;
 
     // التحقق من صحة البيانات المدخلة
@@ -24,10 +17,9 @@ router.post('/', auth, async (req, res) => {
       return res.status(400).json({ message: 'العنوان والهاتف مطلوبان' });
     }
 
-    // معالجة كل عنصر: جلب السعر من قاعدة البيانات والتحقق من المخزون
     let calculatedItems = [];
     let totalAmount = 0;
-    let stockUpdates = []; // لتتبع تحديثات المخزون
+    let stockUpdates = [];
 
     for (const item of items) {
       // التحقق من أن العنصر يحتوي على productId والكمية فقط
@@ -46,22 +38,19 @@ router.post('/', auth, async (req, res) => {
         return res.status(400).json({ message: 'الكمية يجب أن تكون أكبر من صفر' });
       }
 
-      // ⚠️ التحقق من المخزون - هام جداً!
       if (item.quantity > product.countInStock) {
         return res.status(400).json({ 
           message: `المنتج "${product.name}" متوفر فقط ${product.countInStock} وحدات، أنت طلبت ${item.quantity}` 
         });
       }
 
-      // حساب سعر هذا العنصر من قاعدة البيانات (ليس من الفرونت-إند)
       const itemTotal = product.price * item.quantity;
       totalAmount += itemTotal;
 
-      // إضافة العنصر بالسعر من قاعدة البيانات
       calculatedItems.push({
         product: product._id,
         quantity: item.quantity,
-        price: product.price // السعر من قاعدة البيانات، ليس من الطلب
+        price: product.price
       });
 
       // تسجيل تحديث المخزون
@@ -71,8 +60,6 @@ router.post('/', auth, async (req, res) => {
       });
     }
 
-    // ⚠️ خصم المخزون من قاعدة البيانات قبل إنشاء الطلب
-    // نستخدم تحديثات ذرية مع شرط توفر المخزون
     const deducted = [];
     try {
       for (const update of stockUpdates) {
